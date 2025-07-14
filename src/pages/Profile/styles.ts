@@ -21,7 +21,9 @@ export const ProfileContainer = styled.div`
       color: ${(props) => props.theme['base-span']};
     }
   }
-  @media (max-width: 870px) {
+  @media (max-width: 1440px) {
+    margin: 0 auto;
+    max-width: 864px;
     padding: 2rem;
   }
 

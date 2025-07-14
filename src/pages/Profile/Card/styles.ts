@@ -58,7 +58,7 @@ export const CardContainer = styled.button`
     overflow: hidden;
   }
 
-  @media (max-width: 870px) {
+  @media (max-width: 1440px) {
     max-width: 365px;
     max-height: 260px;
 

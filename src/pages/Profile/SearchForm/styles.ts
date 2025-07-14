@@ -19,6 +19,10 @@ export const SearchFormContainer = styled.form`
       color: ${(props) => props.theme['base-label']};
     }
   }
+  @media (max-width: 1440px) {
+    max-width: 864px;
+  }
+
   @media (max-width: 768px) {
     max-width: 320px;
   }
