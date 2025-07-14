@@ -59,7 +59,7 @@ export const CardContainer = styled.button`
   }
 
   @media (max-width: 1440px) {
-    max-width: 365px;
+    max-width: 380px;
     max-height: 260px;
 
     > header {
