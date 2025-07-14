@@ -1,25 +1,34 @@
 import { formatDistanceToNow } from 'date-fns'
-import type { postProps } from '../../../contexts/ProfileContext'
+import type { issueProps } from '../../../contexts/ProfileContext'
 import { CardContainer } from './styles'
 import { enUS } from 'date-fns/locale'
+import { useNavigate } from 'react-router-dom'
 
 interface CardProps {
-  post: postProps
+  issue: issueProps
 }
 
-export function Card({ post }: CardProps) {
-  const formattedDate = formatDistanceToNow(new Date(post.created_at), {
+export function Card({ issue }: CardProps) {
+  const formattedDate = formatDistanceToNow(new Date(issue.created_at), {
     addSuffix: true,
     locale: enUS,
   })
 
+  const navigate = useNavigate()
+
   return (
-    <CardContainer>
+    <CardContainer
+      onClick={() => {
+        navigate(`/issues/${issue.id}`, {
+          state: issue,
+        })
+      }}
+    >
       <header>
-        <h3>{post.title}</h3>
+        <h3>{issue.title}</h3>
         <span>{formattedDate}</span>
       </header>
-      <p>{post.body}</p>
+      <p>{issue.body}</p>
     </CardContainer>
   )
 }

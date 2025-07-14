@@ -6,7 +6,7 @@ import { PostsContainer, ProfileContainer } from './styles'
 import { ProfileContext } from '../../contexts/ProfileContext'
 
 export function Profile() {
-  const { posts, numberOfPosts, loadUser, loadPosts } =
+  const { issues, numberOfPosts, loadUser, loadPosts } =
     useContext(ProfileContext)
 
   useEffect(() => {
@@ -24,8 +24,8 @@ export function Profile() {
         </div>
         <SearchForm />
         <PostsContainer>
-          {posts.map((post, index) => (
-            <Card key={index} post={post} />
+          {issues.map((issue, index) => (
+            <Card key={index} issue={issue} />
           ))}
         </PostsContainer>
       </ProfileContainer>

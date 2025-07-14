@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { mixins } from '../../../styles/mixins'
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.button`
   max-width: 416px;
   max-height: 260px;
 
@@ -10,8 +10,18 @@ export const CardContainer = styled.div`
   gap: 1.25rem;
   padding: 2rem;
 
+  cursor: pointer;
+  border: none;
+  text-align: start;
+  transition: 0.2s;
+
   border-radius: 10px;
   background: ${(props) => props.theme['base-post']};
+
+  &:hover {
+    border: 1px solid ${(props) => props.theme['base-label']};
+    transition: 0.2s;
+  }
 
   > header {
     display: flex;
@@ -33,6 +43,7 @@ export const CardContainer = styled.div`
     > span {
       ${mixins.fonts.textS}
       color: ${(props) => props.theme['base-span']};
+      text-align: right;
     }
   }
 

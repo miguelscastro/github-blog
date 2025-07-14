@@ -37,7 +37,7 @@ export interface userProfileProps {
   updated_at: string
 }
 
-export interface postProps {
+export interface issueProps {
   url: string
   repository_url: string
   labels_url: string
@@ -108,7 +108,7 @@ export interface postProps {
 
 interface ProfileContextType {
   user: userProfileProps
-  posts: postProps[]
+  issues: issueProps[]
   numberOfPosts: number
   loadUser: () => Promise<void>
   loadPosts: (query?: string) => Promise<void>
@@ -121,10 +121,10 @@ interface ProfileProviderProps {
 export const ProfileContext = createContext({} as ProfileContextType)
 
 export function ProfileProvider({ children }: ProfileProviderProps) {
-  const [posts, setPosts] = useState<postProps[]>([])
+  const [issues, setIssues] = useState<issueProps[]>([])
   const [user, setUser] = useState<userProfileProps>({} as userProfileProps)
 
-  const numberOfPosts = posts.length
+  const numberOfPosts = issues.length
 
   async function loadUser() {
     const response = await githubUserApi.get('/miguelscastro')
@@ -134,20 +134,20 @@ export function ProfileProvider({ children }: ProfileProviderProps) {
   async function loadPosts(query?: string) {
     if (!query) {
       const response = await githubIssuesApi.get('/issues')
-      setPosts(response.data)
+      setIssues(response.data)
     } else {
       const response = await githubSearchApi.get('/search/issues', {
         params: {
           q: `repo:miguelscastro/github-blog ${query}`,
         },
       })
-      setPosts(response.data.items)
+      setIssues(response.data.items)
     }
   }
 
   return (
     <ProfileContext.Provider
-      value={{ user, posts, numberOfPosts, loadUser, loadPosts }}
+      value={{ user, issues, numberOfPosts, loadUser, loadPosts }}
     >
       {children}
     </ProfileContext.Provider>

@@ -52,6 +52,14 @@ export const HeroContent = styled.div`
         gap: 0.5rem;
 
         color: ${(props) => props.theme.blue};
+
+        margin-bottom: 1px;
+        transition: 0.2s;
+
+        &:hover {
+          border-bottom: 1px solid ${(props) => props.theme.blue};
+          transition: 0.2s;
+        }
       }
     }
 
