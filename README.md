@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# 📘 GitHub Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that transforms GitHub issues into a dynamic blog.
 
-Currently, two official plugins are available:
+## 🧠 What is this?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project uses the **GitHub API** to fetch:
 
-## Expanding the ESLint configuration
+- 🧑 **User data** from a specific GitHub profile
+- 📝 **Issues** from a selected repository
+- 🔍 **Search results** from issues using GitHub's full-text search
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Each issue becomes a blog post, allowing you to create and manage content through GitHub itself.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- ✅ Uses GitHub REST API (users, issues, search)
+- ✅ Live search with debounce
+- ✅ Markdown rendering styled like GitHub
+- ✅ Fully responsive layout
+- ✅ React Context for global data
+- ✅ TypeScript + Styled-Components
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🔧 Tech Stack
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://axios-http.com/) 
+- [React Markdown](https://github.com/remarkjs/react-markdown) 
+- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) 
+- [Zod](https://zod.dev/)
+- [use-debounce](https://www.npmjs.com/package/use-debounce)
+- [date-fns](https://date-fns.org/) 
+- [React Router](https://reactrouter.com/) 
+- [GitHub REST API](https://docs.github.com/en/rest) 
+
+## 🗂️ How it works
+
+1. The app fetches **profile data** from the GitHub API.
+2. Issues from the specified repo are listed as **blog posts**.
+3. Clicking a post shows the full issue content rendered with **Markdown**.
+4. The search bar uses GitHub's search endpoint to find issues by keyword.
+
+## 📦 Setup
+
+Clone the repo:
+
+```
+git clone https://github.com/miguelscastro/github-blog.git
+cd github-blog
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Install dependencies:
 ```
+npm install
+```
+
+Start the project:
+```
+npm run dev
+```
+
