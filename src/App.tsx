@@ -3,6 +3,7 @@ import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Router'
+import { ProfileProvider } from './contexts/ProfileContext'
 
 export function App() {
   return (
@@ -10,7 +11,9 @@ export function App() {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyle />
         <BrowserRouter>
-          <Router />
+          <ProfileProvider>
+            <Router />
+          </ProfileProvider>
         </BrowserRouter>
       </ThemeProvider>
     </>
