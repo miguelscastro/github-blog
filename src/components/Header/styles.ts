@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
       width: 100%;
       height: 18.5rem;
     }
-    img:last-of-type {
+    a img {
       max-height: 6.125rem;
       max-width: 9.25rem;
 
