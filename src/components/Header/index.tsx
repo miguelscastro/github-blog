@@ -3,14 +3,17 @@ import cover from '../../assets/cover.png'
 import logo from '../../assets/logo.svg'
 import { Hero } from './Hero'
 import { HeaderContainer } from './styles'
-import { ProfileContext } from '../../contexts/ProfileContext'
-import { Link, useLocation } from 'react-router-dom'
+import { ProfileContext, type issueProps } from '../../contexts/ProfileContext'
+import { Link } from 'react-router-dom'
 import { IssueHero } from './IssueHero'
 
-export function Header() {
+interface HeaderProps {
+  uri?: string
+  issue?: issueProps
+}
+
+export function Header({ issue, uri }: HeaderProps) {
   const { user } = useContext(ProfileContext)
-  const { state } = useLocation()
-  const location = useLocation()
 
   return (
     <HeaderContainer>
@@ -20,8 +23,8 @@ export function Header() {
           <img src={logo} />
         </Link>
       </figure>
-      {location.pathname.includes('/issues') ? (
-        <IssueHero user={user} issue={state} />
+      {uri?.includes('issues') ? (
+        <IssueHero user={user} issue={issue} />
       ) : (
         <Hero user={user} />
       )}

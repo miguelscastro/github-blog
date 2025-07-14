@@ -15,9 +15,12 @@
     "@phosphor-icons/react": "^2.1.10",
     "axios": "^1.10.0",
     "date-fns": "^4.1.0",
+    "github-markdown-css": "^5.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.6.3",
+    "remark-gfm": "^4.0.1",
     "styled-components": "^6.1.19",
     "use-debounce": "^10.0.5",
     "zod": "^4.0.5"

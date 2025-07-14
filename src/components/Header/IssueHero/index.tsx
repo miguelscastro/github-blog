@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 
 interface IssueHeroProps {
   user: userProfileProps
-  issue: issueProps
+  issue?: issueProps
 }
 
 export function IssueHero({ user, issue }: IssueHeroProps) {
@@ -26,11 +26,11 @@ export function IssueHero({ user, issue }: IssueHeroProps) {
             <Link to={'/'}>
               <CaretLeftIcon size={15} weight="bold" /> RETURN
             </Link>
-            <a href={issue.url}>
+            <a href={issue?.url}>
               CHECK AT GITHUB <ArrowSquareOutIcon size={15} weight="bold" />
             </a>
           </header>
-          <h1>{issue.title}</h1>
+          <h1>{issue?.title}</h1>
         </div>
         <IssueHeroFooter>
           <li>
