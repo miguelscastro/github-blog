@@ -27,16 +27,14 @@ export function Hero({ user }: HeroProps) {
         </div>
         <HeroFooter>
           <li>
-            <GithubLogoIcon weight="fill" size={25} />
+            <GithubLogoIcon weight="fill" />
             <span>{user.login}</span>
           </li>
           <li>
-            <BuildingIcon weight="fill" size={25} />{' '}
-            <span>{user.location}</span>
+            <BuildingIcon weight="fill" /> <span>{user.location}</span>
           </li>
           <li>
-            <UsersIcon weight="fill" size={25} />{' '}
-            <span>{user.followers} Followers</span>
+            <UsersIcon weight="fill" /> <span>{user.followers} Followers</span>
           </li>
         </HeroFooter>
       </HeroContent>

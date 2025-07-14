@@ -7,6 +7,13 @@ export const IssueContainer = styled.main`
   display: flex;
   justify-content: center;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    max-width: 352px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
 `
 
 export const MarkdownWrapper = styled.div`
@@ -25,6 +32,29 @@ export const MarkdownWrapper = styled.div`
       color: #fff;
       padding: 1rem;
       border-radius: 6px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 352px;
+
+    &.markdown-body {
+      p {
+        ${mixins.fonts.textS}
+        color: ${(props) => props.theme['base-text']}
+      }
+      code {
+        ${mixins.fonts.textS}
+        background-color: ${(props) => props.theme['base-post']};
+        color: ${(props) => props.theme['blue']};
+      }
+      pre {
+        ${mixins.fonts.textS}
+        background-color: ${(props) => props.theme['base-post']};
+        color: #fff;
+        padding: 1rem;
+        border-radius: 6px;
+      }
     }
   }
 `

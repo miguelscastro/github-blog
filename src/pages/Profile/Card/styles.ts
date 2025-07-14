@@ -57,4 +57,50 @@ export const CardContainer = styled.button`
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  @media (max-width: 870px) {
+    max-width: 365px;
+    max-height: 260px;
+
+    > header {
+      > h3 {
+        ${mixins.fonts.textM}
+        font-weight: bold;
+      }
+
+      > span {
+        ${mixins.fonts.textS}
+      }
+    }
+
+    p {
+      ${mixins.fonts.textS}
+      font-weight: normal;
+
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 326px;
+    max-height: 220px;
+
+    > header {
+      > h3 {
+        ${mixins.fonts.textS}
+        font-weight: bold;
+      }
+
+      > span {
+        ${mixins.fonts.link}
+      }
+    }
+
+    p {
+      ${mixins.fonts.link}
+      font-weight: normal;
+
+      -webkit-line-clamp: 3;
+    }
+  }
 `

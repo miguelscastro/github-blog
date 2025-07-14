@@ -26,4 +26,16 @@ export const HeaderContainer = styled.header`
     margin: 0 auto;
     max-width: 1440px;
   }
+
+  @media (max-width: 768px) {
+    > figure {
+      img:first-of-type {
+        height: 10.5rem;
+      }
+
+      a img {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
 `

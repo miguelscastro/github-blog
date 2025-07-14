@@ -20,6 +20,17 @@ export const HeroContainer = styled.section`
     max-height: 9.5rem;
     margin-right: 2rem;
   }
+
+  @media (max-width: 768px) {
+    max-width: 22rem;
+
+    padding: 2rem 2.5rem;
+    transform: translateY(-10%);
+
+    > img {
+      display: none;
+    }
+  }
 `
 
 export const HeroContent = styled.div`
@@ -68,6 +79,26 @@ export const HeroContent = styled.div`
       ${mixins.fonts.textM}
     }
   }
+
+  @media (max-width: 768px) {
+    height: 6.5rem;
+
+    > div {
+      > header {
+        h1 {
+          ${mixins.fonts.titleM}
+        }
+
+        a {
+          ${mixins.fonts.link}
+        }
+      }
+
+      > p {
+        ${mixins.fonts.textS}
+      }
+    }
+  }
 `
 
 export const HeroFooter = styled.ul`
@@ -90,6 +121,26 @@ export const HeroFooter = styled.ul`
 
     svg {
       color: ${(props) => props.theme['base-label']};
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    li {
+      &:not(:last-of-type) {
+        margin-right: 0.5rem;
+      }
+
+      span {
+        ${mixins.fonts.link}
+      }
+
+      svg {
+        color: ${(props) => props.theme['base-label']};
+        width: 1.125rem;
+        height: 1.125rem;
+      }
     }
   }
 `

@@ -20,6 +20,17 @@ export const IssueHeroContainer = styled.section`
     max-height: 9.5rem;
     margin-right: 2rem;
   }
+
+  @media (max-width: 768px) {
+    max-width: 22rem;
+
+    padding: 2rem 2.5rem;
+    transform: translateY(-10%);
+
+    > img {
+      display: none;
+    }
+  }
 `
 
 export const IssueHeroContent = styled.div`
@@ -62,6 +73,22 @@ export const IssueHeroContent = styled.div`
       ${mixins.fonts.titleL}
     }
   }
+
+  @media (max-width: 768px) {
+    height: 8.5rem;
+
+    > div {
+      > header {
+        a {
+          ${mixins.fonts.link}
+        }
+      }
+
+      > h1 {
+        ${mixins.fonts.titleS}
+      }
+    }
+  }
 `
 
 export const IssueHeroFooter = styled.ul`
@@ -84,6 +111,25 @@ export const IssueHeroFooter = styled.ul`
 
     svg {
       color: ${(props) => props.theme['base-label']};
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
+    li {
+      &:not(:last-of-type) {
+        margin-right: 0.5rem;
+      }
+
+      span {
+        ${mixins.fonts.link}
+      }
+
+      svg {
+        color: ${(props) => props.theme['base-label']};
+        width: 1.125rem;
+        height: 1.125rem;
+      }
     }
   }
 `
