@@ -25,37 +25,40 @@ export const HeroContainer = styled.section`
 export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
 
+  height: 9.5rem;
   width: 100%;
   padding-top: 0.5rem;
 
-  > header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h1 {
-      color: ${(props) => props.theme['base-title']};
-      ${mixins.fonts.titleL}
-    }
-
-    a {
-      ${mixins.fonts.link}
-      text-decoration: none;
-
+  > div {
+    > header {
       display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
 
-      color: ${(props) => props.theme.blue};
+      h1 {
+        color: ${(props) => props.theme['base-title']};
+        ${mixins.fonts.titleL}
+      }
+
+      a {
+        ${mixins.fonts.link}
+        text-decoration: none;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        color: ${(props) => props.theme.blue};
+      }
     }
-  }
 
-  > p {
-    color: ${(props) => props.theme['base-text']};
-    ${mixins.fonts.textM}
-    margin-bottom: 1.5rem;
+    > p {
+      color: ${(props) => props.theme['base-text']};
+      ${mixins.fonts.textM}
+    }
   }
 `
 

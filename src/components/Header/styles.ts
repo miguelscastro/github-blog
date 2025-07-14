@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  max-width: 100%;
+  max-height: 27rem;
+
   > figure {
     position: relative;
 
     img:first-of-type {
-      width: 100vw;
+      width: 100%;
       height: 18.5rem;
     }
     img:last-of-type {
-      max-height: 98px;
-      max-width: 148px;
+      max-height: 6.125rem;
+      max-width: 9.25rem;
 
       position: absolute;
       top: 50%;
