@@ -1,62 +1,44 @@
 # 📘 GitHub Blog
 
-A React application that transforms GitHub issues into a dynamic blog.
+A blog-like frontend that fetches GitHub issues and renders them as posts with search and markdown view.
 
-## 🧠 What is this?
+---
 
-This project uses the **GitHub API** to fetch:
+## 🔧 Prerequisites
 
-- 🧑 **User data** from a specific GitHub profile
-- 📝 **Issues** from a selected repository
-- 🔍 **Search results** from issues using GitHub's full-text search
+- Node.js 16+ installed
+- npm/yarn/pnpm installed
 
-Each issue becomes a blog post, allowing you to create and manage content through GitHub itself.
+---
 
-## 🚀 Features
+## 🚀 Quick start (local)
 
-- ✅ Uses GitHub REST API (users, issues, search)
-- ✅ Live search with debounce
-- ✅ Markdown rendering styled like GitHub
-- ✅ Fully responsive layout
-- ✅ React Context for global data
-- ✅ TypeScript + Styled-Components
-
-## 🔧 Tech Stack
-
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Axios](https://axios-http.com/) 
-- [React Markdown](https://github.com/remarkjs/react-markdown) 
-- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) 
-- [Zod](https://zod.dev/)
-- [use-debounce](https://www.npmjs.com/package/use-debounce)
-- [date-fns](https://date-fns.org/) 
-- [React Router](https://reactrouter.com/) 
-- [GitHub REST API](https://docs.github.com/en/rest) 
-
-## 🗂️ How it works
-
-1. The app fetches **profile data** from the GitHub API.
-2. Issues from the specified repo are listed as **blog posts**.
-3. Clicking a post shows the full issue content rendered with **Markdown**.
-4. The search bar uses GitHub's search endpoint to find issues by keyword.
-
-## 📦 Setup
-
-Clone the repo:
-
-```
-git clone https://github.com/miguelscastro/github-blog.git
-cd github-blog
-```
-
-Install dependencies:
-```
+```bash
+cd reactjs/03-github-blog
 npm install
-```
-
-Start the project:
-```
 npm run dev
 ```
 
+---
+
+## 🧪 Tests
+
+- No automated tests included.
+
+---
+
+## 🔁 Features (summary)
+
+- Fetch GitHub profile and issues
+- Render issues as blog posts
+- Search and markdown rendering
+
+---
+
+## 💡 Notes
+
+- Check repository and API settings in source files.
+
+---
+
+Happy coding! ✅
